@@ -16,7 +16,6 @@
 
 */
 import Dashboard from "views/Dashboard.js";
-import UserProfile from "views/UserProfile.js";
 import TableList from "views/TableList.js";
 import OrdersList from "views/OrdersList";
 import RisksList from "views/RisksList";
@@ -26,6 +25,7 @@ import Icons from "views/Icons.js";
 import Maps from "views/Maps.js";
 import Notifications from "views/Notifications.js";
 import ShipmentsMap from "views/ShipmentsMap";
+import NewShipmentForm from "views/NewShipmentForm"
 
 const dashboardRoutes = [
   {
@@ -33,13 +33,6 @@ const dashboardRoutes = [
     name: "Dashboard",
     icon: "nc-icon nc-chart-pie-35",
     component: Dashboard,
-    layout: "/admin"
-  },
-  {
-    path: "/user",
-    name: "User Profile",
-    icon: "nc-icon nc-circle-09",
-    component: UserProfile,
     layout: "/admin"
   },
   {
@@ -58,7 +51,7 @@ const dashboardRoutes = [
   },
   {
     path: "/maps",
-    name: "Maps",
+    name: "Ports Map",
     icon: "nc-icon nc-pin-3",
     component: Maps,
     layout: "/admin"
@@ -68,6 +61,13 @@ const dashboardRoutes = [
     name: "Shipments Map",
     icon: "nc-icon nc-pin-3",
     component: ShipmentsMap,
+    layout: "/admin"
+  },
+  {
+    path: "/new-shipment",
+    name: "New Shipment",
+    icon: "nc-icon nc-spaceship",
+    component: NewShipmentForm,
     layout: "/admin"
   },
   {

@@ -45,8 +45,8 @@ function Dashboard() {
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <p className="card-category">Todays shipment</p>
-                      <Card.Title as="h4">150GB</Card.Title>
+                      <p className="card-category">Todays shipments</p>
+                      <Card.Title as="h4">150T</Card.Title>
                     </div>
                   </Col>
                 </Row>
@@ -71,8 +71,8 @@ function Dashboard() {
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <p className="card-category">Revenue</p>
-                      <Card.Title as="h4">$ 1,345</Card.Title>
+                      <p className="card-category">Containers offloaded</p>
+                      <Card.Title as="h4">1,345</Card.Title>
                     </div>
                   </Col>
                 </Row>
@@ -97,7 +97,7 @@ function Dashboard() {
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <p className="card-category">Errors</p>
+                      <p className="card-category">Damaged Boxes</p>
                       <Card.Title as="h4">23</Card.Title>
                     </div>
                   </Col>
@@ -108,32 +108,6 @@ function Dashboard() {
                 <div className="stats">
                   <i className="far fa-clock-o mr-1"></i>
                   In the last hour
-                </div>
-              </Card.Footer>
-            </Card>
-          </Col>
-          <Col lg="3" sm="6">
-            <Card className="card-stats">
-              <Card.Body>
-                <Row>
-                  <Col xs="5">
-                    <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-favourite-28 text-primary"></i>
-                    </div>
-                  </Col>
-                  <Col xs="7">
-                    <div className="numbers">
-                      <p className="card-category">Followers</p>
-                      <Card.Title as="h4">+45K</Card.Title>
-                    </div>
-                  </Col>
-                </Row>
-              </Card.Body>
-              <Card.Footer>
-                <hr></hr>
-                <div className="stats">
-                  <i className="fas fa-redo mr-1"></i>
-                  Update now
                 </div>
               </Card.Footer>
             </Card>
@@ -216,8 +190,8 @@ function Dashboard() {
           <Col md="4">
             <Card>
               <Card.Header>
-                <Card.Title as="h4">Email Statistics</Card.Title>
-                <p className="card-category">Last Campaign Performance</p>
+                <Card.Title as="h4">Shipment Statistics</Card.Title>
+                <p className="card-category">Aggregated view</p>
               </Card.Header>
               <Card.Body>
                 <div
@@ -226,22 +200,22 @@ function Dashboard() {
                 >
                   <ChartistGraph
                     data={{
-                      labels: ["40%", "20%", "40%"],
-                      series: [40, 20, 40],
+                      labels: ["80%", "15%", "5%"],
+                      series: [80, 15, 5],
                     }}
                     type="Pie"
                   />
                 </div>
                 <div className="legend">
                   <i className="fas fa-circle text-info"></i>
-                  Open <i className="fas fa-circle text-danger"></i>
-                  Bounce <i className="fas fa-circle text-warning"></i>
-                  Unsubscribe
+                  In Time <i className="fas fa-circle text-danger"></i>
+                  Critical Delay <i className="fas fa-circle text-warning"></i>
+                  Severe Delay
                 </div>
                 <hr></hr>
                 <div className="stats">
                   <i className="far fa-clock"></i>
-                  Campaign sent 2 days ago
+                  Data up to 2 days ago
                 </div>
               </Card.Body>
             </Card>
