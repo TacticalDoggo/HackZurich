@@ -88,13 +88,23 @@ const App: React.VFC = () => {
           <div>
             Mexico{"\n"}<span>(https://mexiconewsdaily.com/)</span>
           </div>
+         </LinkItUrl>
+         {clicks.map((latLng, i) => (
+        <pre key={"1"}>{JSON.stringify(latLng.toJSON(), null, 2)}</pre>))}
+        <LinkItUrl>
           <div>
           Portugal{"\n"}<span>(https://www.theportugalnews.com/)</span>
           </div>
+        </LinkItUrl>
+        {clicks.map((latLng, i) => (
+        <pre key={"2"}>{JSON.stringify(latLng.toJSON(), null, 2)}</pre>))}
+        <LinkItUrl>
           <div>
           Japan{"\n"}<span>(https://japannews.yomiuri.co.jp/)</span>
           </div>
          </LinkItUrl>
+         {clicks.map((latLng, i) => (
+        <pre key={"3"}>{JSON.stringify(latLng.toJSON(), null, 2)}</pre>))}
       <h3>{clicks.length === 0 ? "Click on map to add markers" : "Clicks"}</h3>
       {clicks.map((latLng, i) => (
         <pre key={i}>{JSON.stringify(latLng.toJSON(), null, 2)}</pre>
