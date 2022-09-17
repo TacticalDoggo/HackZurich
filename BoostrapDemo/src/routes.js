@@ -25,7 +25,6 @@ import Typography from "views/Typography.js";
 import Icons from "views/Icons.js";
 import Maps from "views/Maps.js";
 import Notifications from "views/Notifications.js";
-import Upgrade from "views/Upgrade.js";
 
 const dashboardRoutes = [
   {
@@ -54,20 +53,6 @@ const dashboardRoutes = [
     name: "Risks List",
     icon: "nc-icon nc-notes",
     component: RisksList,
-    layout: "/admin"
-  },
-  {
-    path: "/typography",
-    name: "Typography",
-    icon: "nc-icon nc-paper-2",
-    component: Typography,
-    layout: "/admin"
-  },
-  {
-    path: "/icons",
-    name: "Icons",
-    icon: "nc-icon nc-atom",
-    component: Icons,
     layout: "/admin"
   },
   {
