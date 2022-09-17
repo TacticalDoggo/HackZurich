@@ -6,6 +6,8 @@ const risks = [
             "lat": 103.55614
         },
         "category": "WEATHER",
+        "time": "30th Aug 2022",
+        "severity": 1,
     }
 
 ];

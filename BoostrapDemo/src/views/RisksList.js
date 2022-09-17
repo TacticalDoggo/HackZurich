@@ -13,16 +13,17 @@ import {
   Col,
 } from "react-bootstrap";
 
+import risks from "../risks-data";
+
 function RisksList() {
   const createDataRow = (risk) => {
     return (
-      <tr>
+      <tr key={risk.id}>
         <td>{risk.id}</td>
-        <td>{risk.warning_type}</td>
+        <td>{risk.category}</td>
         <td>{risk.severity}</td>
-        <td>{risk.location}</td>
+        <td>{JSON.stringify(risk.location)}</td>
         <td>{risk.time}</td>
-        <td>20th Jun 2023</td>
       </tr>
     )
   }
@@ -43,62 +44,14 @@ function RisksList() {
                   <thead>
                     <tr>
                       <th className="border-0">ID</th>
-                      <th className="border-0">Name</th>
-                      <th className="border-0">Loading Port</th>
-                      <th className="border-0">Distanation Port</th>
-                      <th className="border-0">Status</th>
-                      <th className="border-0">ETA</th>
+                      <th className="border-0">Category</th>
+                      <th className="border-0">Severity</th>
+                      <th className="border-0">Location</th>
+                      <th className="border-0">Time</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Potatoes</td>
-                      <td>Shanghai</td>
-                      <td>Switzerland</td>
-                      <td>In Risk</td>
-                      <td>20th Jun 2023</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Minerva Hooper</td>
-                      <td>$23,789</td>
-                      <td>Curaçao</td>
-                      <td>Sinaai-Waas</td>
-                      <td>20th Jun 2023</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Sage Rodriguez</td>
-                      <td>$56,142</td>
-                      <td>Netherlands</td>
-                      <td>Baileux</td>
-                      <td>20th Jun 2023</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Philip Chaney</td>
-                      <td>$38,735</td>
-                      <td>Korea, South</td>
-                      <td>Overland Park</td>
-                      <td>20th Jun 2023</td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td>Doris Greene</td>
-                      <td>$63,542</td>
-                      <td>Malawi</td>
-                      <td>Feldkirchen in Kärnten</td>
-                      <td>20th Jun 2023</td>
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td>Mason Porter</td>
-                      <td>$78,615</td>
-                      <td>Chile</td>
-                      <td>Gloucester</td>
-                      <td>20th Jun 2023</td>
-                    </tr>
+                    {risks.map((risk) => createDataRow(risk))}
                   </tbody>
                 </Table>
               </Card.Body>

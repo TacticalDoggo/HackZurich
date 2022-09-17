@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "hackzurich22-4068",
+  "private_key_id": "4f9830370912b9d61eed73e51fc31259e24fa641",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCfiBMGbZIA13cU\nUf4Tv7srlW6Zwuh5UwGql5AFwo/SzlT9Jr30sSotF3ccgkpHGxjZXfeJ1mLO2Wt0\n8rXO9lAcX+bqrXrrhBA358qaNakOLG89DVugupjG9AMVFjqsqlXtQCT+HkiW9Hzi\n5JWKw5G0gSceG53Q5YKXPmy9SjRkqTWaPuRpcGpoqbB8maFJKWa7OAijdEAUCZgR\n8LAAU399LzLQ3/uDCS2i7aibeHeMsa2ru1PuST1EXgx2WJeo7d7KLdqIOcC5Oz8N\naXJ3QUcOPu7ZwOCGhKqdIja/ZOc+39Di19BzjoDDaO8m+sZZCgBHxj4k5rn+wh/q\nQ3lxvMUbAgMBAAECggEAKt8ancOcVPWSXreaHByOZCwISPIEH3abIAkS/zlGBVTF\nqjJbIgLqXqvLqrGo3Gr/xopmF3ixnPz4z7jZ+wBejwGGwNJWEiyvXxa/b6m0AMcY\nLcQFN7BtlinFGkmbAwPTi6qNRm1E/Kw/U4oyVdQwt91tcb3iL10+Nv7jogrrAZG6\nzqEg4ALYS+cytL0dVQxrVjdx7Gm+FerykkeIKVsTXC6RRkRD+hOBTTD6ELIYWYo6\nhDWwnGONoca0pFq0wNlmaWd3pMfvilgys2fa5x4im2lvufLzqkBFNqipngTbd57i\n3jDZkzfsNcIWxlHlJ2OSjc7evu89AIe+GpTakIJ04QKBgQDSHjk7RD7rE4723JJT\nOWzS0K7JKnzI9uISEQOKH0nSanW/zdR+ODdYUlAzERmI1Mm1TlWsYEgmOX+kdgdV\ncKEhDR6KFCR7DHEPbAEoX9KApiMN/E6nH5xGuuJDAvPL79Ha/CIIpfP8P5tRRPCu\nYk5h0itMu7moi0Q8rapb6GEO3QKBgQDCXgWNOHFGXw3Wduy0L5K1t3JlYh8j2/ZF\nGV+nDt1rYh5c596+17SnqcWlbOPyVBjAKf8UbL6aqDJUEnedzOE/PQ/DoSY+uQ/E\nXSthiarAr65owJGY+GFkTmzVdpO84QPshlCADgDbLi86zYFotGHRuIGVwKaz2HlQ\nc7tnEQwYVwKBgQCsVLuN31hXR3BPCfM9LPETKrLgLOexj8M1HB0yEJ1kZYpzqKZq\na0MBPmmmqJSvxA43lKrxuPoT177XrTIwojKVQARXLVQKU9b61hNRAN5OQ3SmyNPd\ngDCVVjuyyF4aWnRczcRAIZQtxCFoE0nvTJOK6Ww4ABOyp55swebigIHyRQKBgEBj\nARfNEMktB9p5vuPZtpH32S94l7Q7U5OEWklvBS5jbId+UC2MK043UUABmGlYLnLJ\n9rP/agy1lyZ+j514l01pnuVBZvf0OiLkclB3WFdIW1BcKl8wOKMPz8HO7BXvvGsH\n+3bQLLxuyjqChVH4H0doBZVkIlUFavqZvATigs01AoGBAMLqRARlWP+oGoSCojWF\nRo1PkFWjgolIEg1QKMQCeSPBzEQKb7JJsU0F3rHGe438++mEwXWuMdKFb/n//K3c\nXFFHu3wk+NhZQhQ5QcmdS97eUlYqh5/mHrdaFqHIqKlxMqQeoyWNwo2Wgb9xyRQ3\nDEj0KOkmJwKlRHolEkLu6098\n-----END PRIVATE KEY-----\n",
+  "client_email": "alerts-pub-sub-account@hackzurich22-4068.iam.gserviceaccount.com",
+  "client_id": "116330817278233993478",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/alerts-pub-sub-account%40hackzurich22-4068.iam.gserviceaccount.com"
+}
