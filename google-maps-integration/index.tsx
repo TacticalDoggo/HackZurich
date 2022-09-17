@@ -19,6 +19,7 @@ import { createRoot } from "react-dom/client";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import { createCustomEqual } from "fast-equals";
 import { isLatLngLiteral } from "@googlemaps/typescript-guards";
+import * as ports from './ports-data.json';
 
 const render = (status: Status) => {
   return <h1>{status}</h1>;
@@ -31,6 +32,14 @@ const App: React.VFC = () => {
     lat: 0,
     lng: 0,
   });
+
+  const portsPositions = ports.features.map(f => {
+    return {
+      lat: f.properties.latitude,
+      lng: f.properties.longitude
+    }
+  });
+
 
   const onClick = (e: google.maps.MapMouseEvent) => {
     // avoid directly mutating state
@@ -101,6 +110,9 @@ const App: React.VFC = () => {
           style={{ flexGrow: "1", height: "100%" }}
         >
           {clicks.map((latLng, i) => (
+            <Marker key={i} position={latLng} />
+          ))}
+          {portsPositions.map((latLng, i) => (
             <Marker key={i} position={latLng} />
           ))}
         </Map>
