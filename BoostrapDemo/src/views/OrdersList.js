@@ -14,6 +14,18 @@ import {
 } from "react-bootstrap";
 
 function OrdersList() {
+  const createOrderRow = (order) => {
+    return (
+      <tr>
+        <td>{order.id}</td>
+        <td>{order.category}</td>
+        <td>{order.loading_port}</td>
+        <td>{order.destination}</td>
+        <td>In Risk</td>
+        <td>20th Jun 2023</td>
+      </tr>
+    );
+  }
   return (
     <>
       <Container fluid>
