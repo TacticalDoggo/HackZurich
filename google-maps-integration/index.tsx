@@ -19,6 +19,7 @@ import { createRoot } from "react-dom/client";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import { createCustomEqual } from "fast-equals";
 import { isLatLngLiteral } from "@googlemaps/typescript-guards";
+import { LinkItUrl } from 'react-linkify-it';
 
 const render = (status: Status) => {
   return <h1>{status}</h1>;
@@ -27,6 +28,7 @@ const render = (status: Status) => {
 const App: React.VFC = () => {
   const [clicks, setClicks] = React.useState<google.maps.LatLng[]>([]);
   const [zoom, setZoom] = React.useState(3); // initial zoom
+  const [risk, setRisk] = React.useState(3);
   const [center, setCenter] = React.useState<google.maps.LatLngLiteral>({
     lat: 0,
     lng: 0,
@@ -41,6 +43,7 @@ const App: React.VFC = () => {
     console.log("onIdle");
     setZoom(m.getZoom()!);
     setCenter(m.getCenter()!.toJSON());
+    setRisk(m.getMapCapabilities()!);
   };
 
   const form = (
@@ -82,6 +85,13 @@ const App: React.VFC = () => {
           setCenter({ ...center, lng: Number(event.target.value) })
         }
       />
+      <label htmlFor="risk">Possible Risks</label>
+      <div className="App">
+    <LinkItUrl>
+      <p>Sample link to possibly use for direction:
+         https://www.google.com</p>
+    </LinkItUrl>
+  </div>
       <h3>{clicks.length === 0 ? "Click on map to add markers" : "Clicks"}</h3>
       {clicks.map((latLng, i) => (
         <pre key={i}>{JSON.stringify(latLng.toJSON(), null, 2)}</pre>

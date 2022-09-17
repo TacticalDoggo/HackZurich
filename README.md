@@ -23,3 +23,6 @@ This will download any and all dependencies for react. Once finished, you can do
 
 You will start with a basic webhosted app.
 
+###Dependencies & Documentation
+`https://www.npmjs.com/package/react-linkify-it`
+
