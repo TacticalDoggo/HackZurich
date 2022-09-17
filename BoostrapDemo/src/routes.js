@@ -25,6 +25,7 @@ import Typography from "views/Typography.js";
 import Icons from "views/Icons.js";
 import Maps from "views/Maps.js";
 import Notifications from "views/Notifications.js";
+import ShipmentsMap from "views/ShipmentsMap";
 
 const dashboardRoutes = [
   {
@@ -60,6 +61,13 @@ const dashboardRoutes = [
     name: "Maps",
     icon: "nc-icon nc-pin-3",
     component: Maps,
+    layout: "/admin"
+  },
+  {
+    path: "/shipments-maps",
+    name: "Shipments Map",
+    icon: "nc-icon nc-pin-3",
+    component: ShipmentsMap,
     layout: "/admin"
   },
   {
