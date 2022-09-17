@@ -19,6 +19,33 @@ import {
 function Dashboard() {
   return (
     <>
+<table>
+<tr>
+    <th></th>
+    <th>Risk Assessment</th>
+    <th></th>
+</tr>
+<tr>
+    <th></th>
+    <th>Severe Risk<p> </p></th>
+    <th>Critical Risk <p> </p></th>
+</tr>
+<tr>
+    <td>Shipment 1</td>
+    <td><input type="radio" name="row-1" data-col="2"></input></td>
+    <td><input type="radio" name="row-1" data-col="3"></input></td>
+</tr>
+<tr>
+    <td>Shipment 2</td>
+    <td><input type="radio" name="row-2" data-col="2"></input></td>
+    <td><input type="radio" name="row-2" data-col="3"></input></td>
+</tr>
+<tr>
+    <td>Shipment 3</td>
+    <td><input type="radio" name="row-3" data-col="2"></input></td>
+    <td><input type="radio" name="row-3" data-col="3"></input></td>
+</tr>
+</table>
       <Container fluid>
         <Row>
           <Col lg="3" sm="6">
@@ -32,7 +59,7 @@ function Dashboard() {
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <p className="card-category">Number</p>
+                      <p className="card-category">Todays shipment</p>
                       <Card.Title as="h4">150GB</Card.Title>
                     </div>
                   </Col>
@@ -636,5 +663,6 @@ function Dashboard() {
     </>
   );
 }
+
 
 export default Dashboard;
