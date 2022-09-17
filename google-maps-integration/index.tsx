@@ -19,6 +19,7 @@ import { createRoot } from "react-dom/client";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import { createCustomEqual } from "fast-equals";
 import { isLatLngLiteral } from "@googlemaps/typescript-guards";
+import { LinkItUrl } from 'react-linkify-it';
 
 const render = (status: Status) => {
   return <h1>{status}</h1>;
@@ -82,6 +83,18 @@ const App: React.VFC = () => {
           setCenter({ ...center, lng: Number(event.target.value) })
         }
       />
+        <label htmlFor="risk">Risk Assessment</label>
+        <LinkItUrl>
+          <div>
+            Mexico{"\n"}<span>(https://mexiconewsdaily.com/)</span>
+          </div>
+          <div>
+          Portugal{"\n"}<span>(https://www.theportugalnews.com/)</span>
+          </div>
+          <div>
+          Japan{"\n"}<span>(https://japannews.yomiuri.co.jp/)</span>
+          </div>
+         </LinkItUrl>
       <h3>{clicks.length === 0 ? "Click on map to add markers" : "Clicks"}</h3>
       {clicks.map((latLng, i) => (
         <pre key={i}>{JSON.stringify(latLng.toJSON(), null, 2)}</pre>
