@@ -13,15 +13,18 @@ import {
   Col,
 } from "react-bootstrap";
 
+import shipments from "shipments-data";
+
 function OrdersList() {
   const createOrderRow = (order) => {
+    const status = order.warning_id ? "RISK OF DELAY" : "IN TIME";
     return (
       <tr>
         <td>{order.id}</td>
         <td>{order.category}</td>
-        <td>{order.loading_port}</td>
-        <td>{order.destination}</td>
-        <td>In Risk</td>
+        <td>{order.port_destination_name}</td>
+        <td>{order.final_destination}</td>
+        <td>{status}</td>
         <td>20th Jun 2023</td>
       </tr>
     );
@@ -43,62 +46,15 @@ function OrdersList() {
                   <thead>
                     <tr>
                       <th className="border-0">ID</th>
-                      <th className="border-0">Name</th>
-                      <th className="border-0">Loading Port</th>
+                      <th className="border-0">Category</th>
                       <th className="border-0">Distanation Port</th>
+                      <th className="border-0">Final Destination</th>
                       <th className="border-0">Status</th>
                       <th className="border-0">ETA</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Potatoes</td>
-                      <td>Shanghai</td>
-                      <td>Switzerland</td>
-                      <td>Low Risk</td>
-                      <td>20th Jun 2023</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Rice</td>
-                      <td>China</td>
-                      <td>Morroco</td>
-                      <td>High Risk</td>
-                      <td>20th Jun 2023</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Bananas</td>
-                      <td>Argentina</td>
-                      <td>United States</td>
-                      <td>Safe</td>
-                      <td>20th Jun 2023</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Bottled Water</td>
-                      <td>Mexico</td>
-                      <td>South Korea</td>
-                      <td>Low Risk</td>
-                      <td>20th Jun 2023</td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td>Wine</td>
-                      <td>Spain</td>
-                      <td>Canada</td>
-                      <td>Low Risk</td>
-                      <td>20th Jun 2023</td>
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td>Cheese</td>
-                      <td>Scotland</td>
-                      <td>Australia</td>
-                      <td>Safe</td>
-                      <td>20th Jun 2023</td>
-                    </tr>
+                    {shipments.map((shipment)=> createOrderRow(shipment))}
                   </tbody>
                 </Table>
               </Card.Body>

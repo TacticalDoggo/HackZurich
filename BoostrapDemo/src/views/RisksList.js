@@ -59,44 +59,44 @@ function RisksList() {
                       <td>In Risk</td>
                       <td>20th Jun 2023</td>
                     </tr>
-                     <tr>
+                    <tr>
                       <td>2</td>
-                      <td>Rice</td>
-                      <td>China</td>
-                      <td>Morroco</td>
-                      <td>High Risk</td>
+                      <td>Minerva Hooper</td>
+                      <td>$23,789</td>
+                      <td>Curaçao</td>
+                      <td>Sinaai-Waas</td>
                       <td>20th Jun 2023</td>
                     </tr>
                     <tr>
                       <td>3</td>
-                      <td>Bananas</td>
-                      <td>Argentina</td>
-                      <td>United States</td>
-                      <td>Safe</td>
+                      <td>Sage Rodriguez</td>
+                      <td>$56,142</td>
+                      <td>Netherlands</td>
+                      <td>Baileux</td>
                       <td>20th Jun 2023</td>
                     </tr>
                     <tr>
                       <td>4</td>
-                      <td>Bottled Water</td>
-                      <td>Mexico</td>
-                      <td>South Korea</td>
-                      <td>Low Risk</td>
+                      <td>Philip Chaney</td>
+                      <td>$38,735</td>
+                      <td>Korea, South</td>
+                      <td>Overland Park</td>
                       <td>20th Jun 2023</td>
                     </tr>
                     <tr>
                       <td>5</td>
-                      <td>Wine</td>
-                      <td>Spain</td>
-                      <td>Canada</td>
-                      <td>Low Risk</td>
+                      <td>Doris Greene</td>
+                      <td>$63,542</td>
+                      <td>Malawi</td>
+                      <td>Feldkirchen in Kärnten</td>
                       <td>20th Jun 2023</td>
                     </tr>
                     <tr>
                       <td>6</td>
-                      <td>Cheese</td>
-                      <td>Scotland</td>
-                      <td>Australia</td>
-                      <td>Safe</td>
+                      <td>Mason Porter</td>
+                      <td>$78,615</td>
+                      <td>Chile</td>
+                      <td>Gloucester</td>
                       <td>20th Jun 2023</td>
                     </tr>
                   </tbody>
