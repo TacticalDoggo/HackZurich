@@ -14,6 +14,18 @@ import {
 } from "react-bootstrap";
 
 function RisksList() {
+  const createDataRow = (risk) => {
+    return (
+      <tr>
+        <td>{risk.id}</td>
+        <td>{risk.warning_type}</td>
+        <td>{risk.severity}</td>
+        <td>{risk.location}</td>
+        <td>{risk.time}</td>
+        <td>20th Jun 2023</td>
+      </tr>
+    )
+  }
   return (
     <>
       <Container fluid>
