@@ -19,6 +19,14 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 
 function OrdersList() {
+  const [risksData, setRisksData] = React.useState([]);
+  React.useEffect(() => {
+    fetch("https://api-migros-supply-chain.herokuapp.com/warnings")
+      .then((data) => data.json())
+      .then((json) => {
+        setRisksData(json);
+      })
+  }, []);
   const risksMap = {};
   risks.forEach((risk) => {
     risksMap[risk.id] = risk.warning_text;
