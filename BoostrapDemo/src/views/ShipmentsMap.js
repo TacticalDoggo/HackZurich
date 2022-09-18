@@ -54,7 +54,7 @@ function ShipmentsMap() {
                 portName: shipment.port_destination_name,
             }
         });
-    
+
         const image = require("assets/img/ship.png")
 
         const markers = risks.map((risk) => new google.maps.Marker({
@@ -65,6 +65,13 @@ function ShipmentsMap() {
             map: map,
             icon: image,
             animation: google.maps.Animation.DROP,
+        }));
+        
+        const portIcon = require("assets/img/port-icon.png");
+        const portMarkers = shipmentsDestPorts.map((port) => new google.maps.Marker({
+            position: port.latlng,
+            map:map,
+            icon: portIcon,
         }));
 
         const riskCircles = risks.map((risk) => new google.maps.Circle({
@@ -79,7 +86,41 @@ function ShipmentsMap() {
                 lng: risk.last_location.last_longitude
             },
             radius: 500000,
-          }));
+        }));
+
+        const routesCoord = shipments.map(s => s.route_coord);
+        let routes = routesCoord.map(r => r.map(r1 => {
+            return {
+                lat: r1[0],
+                lng: r1[1]
+            };
+        }));
+        shipments.forEach((s, index) => {
+          routes[index].unshift({
+              lat: risks[index].last_location.last_latitude,
+              lng: risks[index].last_location.last_longitude,
+          });
+          routes[index].push(shipmentsDestPorts[index].latlng);  
+        });
+
+        const polyLines = routes.slice(0,2).map(route => new google.maps.Polyline({
+            path: route,
+            geodesic: true,
+            strokeColor: "#FF0000",
+            strokeOpacity: 1.0,
+            strokeWeight: 2,
+            map,
+        }));
+
+        // const polyLine = new google.maps.Polyline({
+        //     path: routes[1],
+        //     geodesic: true,
+        //     strokeColor: "#FF0000",
+        //     strokeOpacity: 1.0,
+        //     strokeWeight: 2,
+        //     map,
+        // });
+
 
         // const otherMarkers = places.map(place => new google.maps.Marker({
         //     position: place,
@@ -96,9 +137,9 @@ function ShipmentsMap() {
         markers.forEach((marker, index) => {
             google.maps.event.addListener(marker, "click", function () {
                 infowindows[index].open(map, marker);
-              });
+            });
         });
-        
+
     }, []);
     return (
         <>

@@ -2,6 +2,8 @@ import React from "react";
 
 // react-bootstrap components
 import { Badge, Button, Navbar, Nav, Container } from "react-bootstrap";
+import shipments from "shipments-data.js";
+import { isReturnStatement } from "typescript";
 import ports from "../ports-data.js";
 
 function Maps() {
