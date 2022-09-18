@@ -12,17 +12,26 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
+import risks from "../risks-data";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
+
 
 function RisksList() {
+  const renderTooltip = (text,props) => (
+    <Tooltip {...props}>{text}</Tooltip>
+  );
   const createDataRow = (risk) => {
     return (
       <tr>
         <td>{risk.id}</td>
-        <td>{risk.warning_type}</td>
-        <td>{risk.severity}</td>
-        <td>{risk.location}</td>
-        <td>{risk.time}</td>
-        <td>20th Jun 2023</td>
+        <OverlayTrigger placement="top" overlay={renderTooltip(risk.warning_text)}>
+        <td>{risk.event}</td>
+        </OverlayTrigger>
+        <td>{Math.floor(Math.random() * 5) + 1}</td>
+        <td>{risk.last_location.last_longitude}</td>
+        <td>{risk.last_location.last_latitude}</td>
+        <td>30th Aug 2022</td>
       </tr>
     )
   }
@@ -33,7 +42,7 @@ function RisksList() {
           <Col md="12">
             <Card className="card-plain table-plain-bg">
               <Card.Header>
-                <Card.Title as="h4">All Migros RisksList</Card.Title>
+                <Card.Title as="h4">All Current Risks</Card.Title>
                 <p className="card-category">
                   Risks List
                 </p>
@@ -43,62 +52,15 @@ function RisksList() {
                   <thead>
                     <tr>
                       <th className="border-0">ID</th>
-                      <th className="border-0">Name</th>
-                      <th className="border-0">Loading Port</th>
-                      <th className="border-0">Distanation Port</th>
-                      <th className="border-0">Status</th>
-                      <th className="border-0">ETA</th>
+                      <th className="border-0">Category</th>
+                      <th className="border-0">Severity</th>
+                      <th className="border-0">Location:longitude</th>
+                      <th className="border-0">Location:latitude</th>
+                      <th className="border-0">Time</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Potatoes</td>
-                      <td>Shanghai</td>
-                      <td>Switzerland</td>
-                      <td>In Risk</td>
-                      <td>20th Jun 2023</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Minerva Hooper</td>
-                      <td>$23,789</td>
-                      <td>Curaçao</td>
-                      <td>Sinaai-Waas</td>
-                      <td>20th Jun 2023</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Sage Rodriguez</td>
-                      <td>$56,142</td>
-                      <td>Netherlands</td>
-                      <td>Baileux</td>
-                      <td>20th Jun 2023</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Philip Chaney</td>
-                      <td>$38,735</td>
-                      <td>Korea, South</td>
-                      <td>Overland Park</td>
-                      <td>20th Jun 2023</td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td>Doris Greene</td>
-                      <td>$63,542</td>
-                      <td>Malawi</td>
-                      <td>Feldkirchen in Kärnten</td>
-                      <td>20th Jun 2023</td>
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td>Mason Porter</td>
-                      <td>$78,615</td>
-                      <td>Chile</td>
-                      <td>Gloucester</td>
-                      <td>20th Jun 2023</td>
-                    </tr>
+                    {risks.map((risk)=> createDataRow(risk))}
                   </tbody>
                 </Table>
               </Card.Body>

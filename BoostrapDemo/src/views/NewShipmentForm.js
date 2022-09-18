@@ -15,6 +15,9 @@ import {
 } from "react-bootstrap";
 
 function NewShipmentForm() {
+  const assessRisks = () => {
+      alert("A risk of typhoon is predicted along this route, re-route or expect critical delays");
+  }
   return (
     <>
       <Container fluid>

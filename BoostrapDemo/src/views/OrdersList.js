@@ -13,18 +13,31 @@ import {
   Col,
 } from "react-bootstrap";
 
-import shipments from "shipments-data";
+import shipments from "../shipments-data";
+import risks from "../risks-data";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 function OrdersList() {
-  const createOrderRow = (order) => {
+  const risksMap = {};
+  risks.forEach((risk) => {
+    risksMap[risk.id] = risk.warning_text;
+  })
+  const renderTooltip = (text, props) => (
+    <Tooltip {...props}>{text}</Tooltip>
+  );
+  const createOrderRow = (order, index) => {
     const status = order.warning_id ? "RISK OF DELAY" : "IN TIME";
     return (
       <tr>
-        <td>{order.id}</td>
-        <td>{order.category}</td>
-        <td>{order.port_destination_name}</td>
-        <td>{order.final_destination}</td>
-        <td>{status}</td>
+        <td>{index}</td>
+        <td>{order.product_name}</td>
+        <td>{order.port_of_loading + ', ' + order.port_loading_country}</td>
+        <td>{order.port_destination_name + ', ' + order.port_destination_country}</td>
+        <td>{order.destination_location}</td>
+        <OverlayTrigger placement="top" overlay={renderTooltip(risksMap[order.warning_id])}>
+          <td>{status}</td>
+        </OverlayTrigger>
         <td>20th Jun 2023</td>
       </tr>
     );
@@ -46,7 +59,8 @@ function OrdersList() {
                   <thead>
                     <tr>
                       <th className="border-0">ID</th>
-                      <th className="border-0">Category</th>
+                      <th className="border-0">Product</th>
+                      <th className="border-0">Loading Port</th>
                       <th className="border-0">Distanation Port</th>
                       <th className="border-0">Final Destination</th>
                       <th className="border-0">Status</th>
@@ -54,7 +68,7 @@ function OrdersList() {
                     </tr>
                   </thead>
                   <tbody>
-                    {shipments.map((shipment)=> createOrderRow(shipment))}
+                    {shipments.map((shipment, index) => createOrderRow(shipment, index))}
                   </tbody>
                 </Table>
               </Card.Body>

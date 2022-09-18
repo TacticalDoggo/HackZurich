@@ -58,7 +58,7 @@ const dashboardRoutes = [
   },
   {
     path: "/shipments-maps",
-    name: "Shipments Map",
+    name: "Find My Shipment",
     icon: "nc-icon nc-pin-3",
     component: ShipmentsMap,
     layout: "/admin"

@@ -3,6 +3,7 @@ import React from "react";
 // react-bootstrap components
 import { Badge, Button, Navbar, Nav, Container } from "react-bootstrap";
 import shipments from "../shipments-data.js";
+import risks from "../risks-data.js";
 import ports from "../ports-data";
 import MapDirectionsRenderer from '../components/MapDirections/MapDirectionsRenderer';
 
@@ -53,21 +54,22 @@ function ShipmentsMap() {
                 portName: shipment.port_destination_name,
             }
         });
-        console.log(portsMap);
-        console.log(shipmentsDestPorts);
+    
 
 
-        const markers = shipmentsDestPorts.map(port => new google.maps.Marker({
-            position: port.latlng,
+        const markers = risks.map((risk) => new google.maps.Marker({
+            position: {
+                lat: risk.last_location.last_latitude,
+                lng: risk.last_location.last_longitude
+            },
             map: map,
             animation: google.maps.Animation.DROP,
-            title: port.portName
         }));
 
-        const otherMarkers = places.map(place => new google.maps.Marker({
-            position: place,
-            map: map,
-        }));
+        // const otherMarkers = places.map(place => new google.maps.Marker({
+        //     position: place,
+        //     map: map,
+        // }));
 
         const contentString =
             '<div class="info-window-content"><h2>Light Bootstrap Dashboard PRO React</h2>' +
