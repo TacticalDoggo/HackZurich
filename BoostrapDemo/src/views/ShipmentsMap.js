@@ -35,12 +35,6 @@ function ShipmentsMap() {
 
         map = new google.maps.Map(map, mapOptions);
 
-        // const marker = new google.maps.Marker({
-        //   position: myLatlng,
-        //   map: map,
-        //   animation: google.maps.Animation.DROP,
-        //   title: "Light Bootstrap Dashboard PRO React!",
-        // });
         let portsMap = {};
         ports.forEach(port => {
             portsMap[port.properties.portname] = {
@@ -111,25 +105,6 @@ function ShipmentsMap() {
             strokeWeight: 2,
             map,
         }));
-
-        // const polyLine = new google.maps.Polyline({
-        //     path: routes[1],
-        //     geodesic: true,
-        //     strokeColor: "#FF0000",
-        //     strokeOpacity: 1.0,
-        //     strokeWeight: 2,
-        //     map,
-        // });
-
-
-        // const otherMarkers = places.map(place => new google.maps.Marker({
-        //     position: place,
-        //     map: map,
-        // }));
-
-        const contentString =
-            '<div class="info-window-content"><h2>Light Bootstrap Dashboard PRO React</h2>' +
-            "<p>A premium Admin for React-Bootstrap, Bootstrap, React, and React Hooks.</p></div>";
 
         const infowindows = risks.map((risk) => new google.maps.InfoWindow({
             content: risk.warning_text,
