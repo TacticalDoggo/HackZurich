@@ -25,7 +25,7 @@ import Icons from "views/Icons.js";
 import Maps from "views/Maps.js";
 import Notifications from "views/Notifications.js";
 import ShipmentsMap from "views/ShipmentsMap";
-import NewShipmentForm from "views/NewShipmentForm"
+import NewShipmentForm from "views/NewShipmentForm";
 
 const dashboardRoutes = [
   {

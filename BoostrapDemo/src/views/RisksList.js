@@ -54,8 +54,8 @@ function RisksList() {
                       <th className="border-0">ID</th>
                       <th className="border-0">Category</th>
                       <th className="border-0">Severity</th>
-                      <th className="border-0">Location:longitude</th>
-                      <th className="border-0">Location:latitude</th>
+                      <th className="border-0">longitude</th>
+                      <th className="border-0">latitude</th>
                       <th className="border-0">Time</th>
                     </tr>
                   </thead>

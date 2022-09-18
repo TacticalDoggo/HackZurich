@@ -41,11 +41,13 @@ function Maps() {
         portName: f.properties.portname,
       }
     });
-
+   
+    const icon = require("assets/img/port-icon.png")
 
     const markers = portsData.map(port => new google.maps.Marker({
       position: port.latlng,
       map: map,
+      icon: icon,
       animation: google.maps.Animation.DROP,
       title: port.portName
     }));

@@ -67,6 +67,20 @@ function ShipmentsMap() {
             animation: google.maps.Animation.DROP,
         }));
 
+        const riskCircles = risks.map((risk) => new google.maps.Circle({
+            strokeColor: "#FF0000",
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: "#FF0000",
+            fillOpacity: 0.35,
+            map,
+            center: {
+                lat: risk.last_location.last_latitude,
+                lng: risk.last_location.last_longitude
+            },
+            radius: 500000,
+          }));
+
         // const otherMarkers = places.map(place => new google.maps.Marker({
         //     position: place,
         //     map: map,
@@ -76,13 +90,15 @@ function ShipmentsMap() {
             '<div class="info-window-content"><h2>Light Bootstrap Dashboard PRO React</h2>' +
             "<p>A premium Admin for React-Bootstrap, Bootstrap, React, and React Hooks.</p></div>";
 
-        const infowindow = new google.maps.InfoWindow({
-            content: contentString,
+        const infowindows = risks.map((risk) => new google.maps.InfoWindow({
+            content: risk.warning_text,
+        }));
+        markers.forEach((marker, index) => {
+            google.maps.event.addListener(marker, "click", function () {
+                infowindows[index].open(map, marker);
+              });
         });
-
-        // google.maps.event.addListener(marker, "click", function () {
-        //   infowindow.open(map, marker);
-        // });
+        
     }, []);
     return (
         <>
