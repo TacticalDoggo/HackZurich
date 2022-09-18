@@ -55,7 +55,7 @@ function ShipmentsMap() {
             }
         });
     
-
+        const image = require("assets/img/ship.png")
 
         const markers = risks.map((risk) => new google.maps.Marker({
             position: {
@@ -63,6 +63,7 @@ function ShipmentsMap() {
                 lng: risk.last_location.last_longitude
             },
             map: map,
+            icon: image,
             animation: google.maps.Animation.DROP,
         }));
 
